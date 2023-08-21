@@ -128,3 +128,6 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+braided-potion-383818-4e68a73d5e57.json
+.DS_Store
