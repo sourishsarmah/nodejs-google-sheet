@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const googleSheet = require('./google-sheet');
 const app = express();
 const port = 3000;
 
@@ -18,9 +19,10 @@ app.get('/', (req, res) => {
 });
 
 
-app.post('/user', (req, res) => {
+app.post('/user', async (req, res) => {
     console.log(req.body.user)
-    res.json({ message: 'Hello from the server!' });
+    await googleSheet.updateSheet("10Qle-tgjBJqsF54yVcTYZLnDdkEuHhlBnz2-tRy-TF4", req.body.user)
+    res.json({ message: 'Data Added' });
 });
 
 
